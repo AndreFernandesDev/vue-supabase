@@ -14,6 +14,16 @@ async function getCountries() {
 onMounted(() => {
   getCountries();
 });
+
+async function signInWithTwitter() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "twitter",
+    options: {
+      scopes: "email",
+    },
+  });
+  console.log(data, error);
+}
 </script>
 
 <template>
@@ -21,4 +31,5 @@ onMounted(() => {
   <ul>
     <li v-for="country in countries" :key="country.id">{{ country.name }}</li>
   </ul>
+  <button @click="signInWithTwitter">Login with x</button>
 </template>

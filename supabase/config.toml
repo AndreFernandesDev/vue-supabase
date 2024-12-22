@@ -1,0 +1,6 @@
+project_id = "fslejowqsnlgoqdtmlo"
+[auth.external.twitter]
+enabled = true
+client_id = "env(X_CLIENT_ID)"
+secret = "env(X_SECRET)"
+redirect_uri = "http://127.0.0.1:54321/auth/v1/callback"
